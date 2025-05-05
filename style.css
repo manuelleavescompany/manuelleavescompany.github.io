@@ -1,0 +1,288 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.label-container {
+    width: 380px;
+    border: 2px solid #000;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between sections */
+}
+
+/* Header */
+.label-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.eu-flag {
+    font-size: 24px; /* Adjust as needed */
+}
+
+.header-title {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.regulation {
+    font-size: 8px;
+    text-align: right;
+    color: #555;
+}
+
+/* Supplier Info */
+.supplier-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.supplier-logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.supplier-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* QR Code and Identifier */
+.qr-identifier {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.qr-code img {
+    display: block;
+}
+
+.identifier {
+    font-size: 10px;
+    color: #333;
+}
+
+/* Ratings */
+.ratings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between rating sections */
+    padding: 10px 0;
+}
+
+.rating-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.attribute-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.attribute-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    width: 30px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.attribute-name {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.rating-scale-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between scale and value */
+}
+
+.rating-scale {
+    display: flex;
+    flex-direction: column;
+    width: 180px; /* Adjust width as needed */
+}
+
+.scale-bar {
+    height: 16px; /* Adjust height */
+    line-height: 16px; /* Vertically center text */
+    color: #fff;
+    font-weight: bold;
+    font-size: 11px;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 1px; /* Small gap between bars */
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+.scale-bar::before { /* The arrow shape */
+    content: '';
+    position: absolute;
+    right: -8px; /* Size of the arrow */
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent; /* Half of height */
+    border-bottom: 8px solid transparent; /* Half of height */
+    border-left: 8px solid; /* Width of the arrow, color set below */
+}
+
+/* Standard EU Tire Label Colors (Approximate) */
+.scale-bar.a { background-color: #008A3A; border-left-color: #008A3A; width: 90%; }
+.scale-bar.b { background-color: #50A844; border-left-color: #50A844; width: 80%; }
+.scale-bar.c { background-color: #A4C637; border-left-color: #A4C637; width: 70%; }
+.scale-bar.d { background-color: #FFF200; border-left-color: #FFF200; width: 60%; color: #333; text-shadow: none;} /* Yellow, dark text */
+.scale-bar.e { background-color: #FABE00; border-left-color: #FABE00; width: 50%; }
+.scale-bar.f { background-color: #F08100; border-left-color: #F08100; width: 40%; }
+.scale-bar.g { background-color: #E63017; border-left-color: #E63017; width: 30%; }
+
+
+.rating-value {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 4px;
+    margin-left: 15px; /* Space after the scale */
+    min-width: 80px; /* Ensure minimum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-letter {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+.rating-description {
+    font-size: 10px;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Specific styles to highlight the selected rating bar */
+.caffeine .rating-scale .scale-bar[data-rating="A"].a,
+.caffeine .rating-scale .scale-bar[data-rating="B"].b,
+.caffeine .rating-scale .scale-bar[data-rating="C"].c,
+.caffeine .rating-scale .scale-bar[data-rating="D"].d,
+.caffeine .rating-scale .scale-bar[data-rating="E"].e,
+.caffeine .rating-scale .scale-bar[data-rating="F"].f,
+.caffeine .rating-scale .scale-bar[data-rating="G"].g,
+.pressure .rating-scale .scale-bar[data-rating="A"].a,
+.pressure .rating-scale .scale-bar[data-rating="B"].b,
+.pressure .rating-scale .scale-bar[data-rating="C"].c,
+.pressure .rating-scale .scale-bar[data-rating="D"].d,
+.pressure .rating-scale .scale-bar[data-rating="E"].e,
+.pressure .rating-scale .scale-bar[data-rating="F"].f,
+.pressure .rating-scale .scale-bar[data-rating="G"].g {
+    /* Add slight visual distinction if needed, e.g., outline */
+    /* outline: 2px solid black; */
+}
+/* Match rating-value background to the selected bar's color */
+.caffeine .rating-value[data-rating="A"] { background-color: #008A3A; }
+.caffeine .rating-value[data-rating="B"] { background-color: #50A844; }
+.caffeine .rating-value[data-rating="C"] { background-color: #A4C637; }
+.caffeine .rating-value[data-rating="D"] { background-color: #FFF200; color: #333; }
+.caffeine .rating-value[data-rating="E"] { background-color: #FABE00; }
+.caffeine .rating-value[data-rating="F"] { background-color: #F08100; }
+.caffeine .rating-value[data-rating="G"] { background-color: #E63017; }
+
+.pressure .rating-value[data-rating="A"] { background-color: #008A3A; }
+.pressure .rating-value[data-rating="B"] { background-color: #50A844; }
+.pressure .rating-value[data-rating="C"] { background-color: #A4C637; }
+.pressure .rating-value[data-rating="D"] { background-color: #FFF200; color: #333; }
+.pressure .rating-value[data-rating="E"] { background-color: #FABE00; }
+.pressure .rating-value[data-rating="F"] { background-color: #F08100; }
+.pressure .rating-value[data-rating="G"] { background-color: #E63017; }
+
+
+/* Noise/Volume Section */
+.volume .rating-scale-container {
+    justify-content: flex-end; /* Align noise info to the right */
+}
+.noise-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 120px; /* Fixed width */
+    margin-left: auto; /* Push to the right */
+}
+
+.noise-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.noise-unit {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.noise-icons {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.noise-icon {
+    background-color: #ccc;
+    color: #fff;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.noise-icon.active {
+    background-color: #000;
+}
+
+
+/* Footer */
+.label-footer {
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 9px;
+    color: #555;
+    text-align: center;
+}
+
+/* Placeholder for QR Code */
+.qr-code img {
+    border: 1px solid #ccc; /* Add border to placeholder */
+}
