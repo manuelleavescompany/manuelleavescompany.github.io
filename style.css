@@ -99,7 +99,7 @@
 .main-grades {
     display: flex;
     flex-direction: row;
-    height: 220px;
+    height: 230px;
     padding: 10px 2px 0 2px;
 }
 .grade-block {
@@ -113,13 +113,23 @@
     padding-left: 16px;
     width: 52%;
 }
-.tyre-icon-row {
+.performance-under-pressure-row {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 7px;
     gap: 10px;
 }
+
+ .performance-under-pressure-text {
+     font-size: 6pt;
+     margin-left: 0px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 7px;
+     gap: 10px;
+ }
 
  .performance-icons {
      margin-left: -45px;
@@ -298,6 +308,12 @@
  .noise-value {
      font-size: 28px;
      font-weight: bold;
+     color: #000;
+ }
+
+ .noise-text {
+     font-size: 6pt;
+     padding-bottom: 5px;
      color: #000;
  }
 
